@@ -750,3 +750,355 @@ body {
 
   transform: translateY(-5px);
 }
+
+/* =========================
+ HERO LOJA
+========================= */
+
+.store-hero {
+  position: relative;
+  height: 80vh;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  overflow: hidden;
+}
+
+.store-hero img {
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+}
+
+.store-overlay {
+  position: absolute;
+  inset: 0;
+
+  background: rgba(0,0,0,0.45);
+
+  z-index: 1;
+}
+
+.store-content {
+  position: absolute;
+  z-index: 2;
+
+  text-align: center;
+  color: white;
+
+  max-width: 800px;
+}
+
+.store-content span {
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: #dce2e5;
+}
+
+.store-content h1 {
+  font-size: 64px;
+  margin: 20px 0;
+}
+
+.store-content p {
+  font-size: 20px;
+  line-height: 1.7;
+}
+
+/* =========================
+ CATEGORIAS
+========================= */
+
+.categories {
+  width: 90%;
+
+  margin: -60px auto 80px;
+
+  background-color: white;
+
+  border-radius: 28px;
+
+  display: flex;
+  justify-content: space-around;
+
+  padding: 40px;
+
+  position: relative;
+  z-index: 10;
+
+  box-shadow: 0 15px 35px rgba(0,0,0,0.08);
+}
+
+.category-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  gap: 12px;
+
+  font-size: 42px;
+
+  color: #364C59;
+
+  transition: 0.3s;
+}
+
+.category-card span {
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.category-card:hover {
+  transform: translateY(-8px);
+}
+
+/* =========================
+ PRODUTOS
+========================= */
+
+.store-products {
+  padding: 40px 6% 100px;
+}
+
+/* =========================
+ BANNER
+========================= */
+
+.store-banner {
+  margin: 0 6% 100px;
+
+  border-radius: 32px;
+
+  overflow: hidden;
+
+  background:
+    linear-gradient(
+      135deg,
+      rgba(54,76,89,0.92),
+      rgba(92,106,115,0.9)
+    ),
+    url('../img/banner-store.jpg');
+
+  background-size: cover;
+  background-position: center;
+
+  padding: 100px 60px;
+
+  color: white;
+}
+
+.banner-content {
+  max-width: 700px;
+}
+
+.banner-content span {
+  text-transform: uppercase;
+  letter-spacing: 2px;
+
+  color: #dce2e5;
+}
+
+.banner-content h2 {
+  font-size: 52px;
+  margin: 20px 0;
+}
+
+.banner-content p {
+  font-size: 20px;
+  line-height: 1.8;
+
+  margin-bottom: 35px;
+}
+
+.banner-content a {
+  display: inline-block;
+
+  background-color: white;
+  color: #364C59;
+
+  text-decoration: none;
+
+  padding: 18px 30px;
+
+  border-radius: 16px;
+
+  font-weight: 600;
+
+  transition: 0.3s;
+}
+
+.banner-content a:hover {
+  transform: translateY(-5px);
+}
+
+/* =========================
+PARCEIRO PET ANJO
+========================= */
+
+.services-partner {
+  width: 92%;
+  margin: 80px auto;
+
+  background: white;
+
+  border: 1px solid #d9d9d9;
+
+  border-radius: 32px;
+
+  padding: 40px;
+}
+
+/* TOPO */
+
+.partner-header img {
+  height: 70px;
+  margin-bottom: 20px;
+}
+
+.partner-header p {
+  font-size: 20px;
+  line-height: 1.8;
+
+  color: #5C6A73;
+
+  max-width: 1100px;
+
+  margin-bottom: 40px;
+}
+
+/* GRID */
+
+.partner-grid {
+  display: grid;
+
+  grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
+
+  gap: 25px;
+}
+
+/* CARD */
+
+.partner-card {
+  border: 1px solid #dcdcdc;
+
+  border-radius: 28px;
+
+  padding: 35px;
+
+  display: flex;
+  align-items: center;
+  gap: 30px;
+
+  transition: 0.3s;
+}
+
+.partner-card:hover {
+  transform: translateY(-5px);
+
+  box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+}
+
+/* IMAGEM */
+
+.partner-image img {
+  width: 180px;
+}
+
+/* TEXTO */
+
+.partner-info {
+  flex: 1;
+}
+
+.partner-info h3 {
+  font-size: 34px;
+
+  color: #364C59;
+
+  margin-bottom: 10px;
+}
+
+.partner-desc {
+  color: #74838C;
+
+  margin-bottom: 30px;
+
+  font-size: 18px;
+}
+
+/* ITENS */
+
+.partner-items {
+  display: flex;
+
+  gap: 25px;
+
+  flex-wrap: wrap;
+
+  margin-bottom: 35px;
+}
+
+.partner-items div {
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: center;
+
+  gap: 8px;
+
+  color: #5C6A73;
+
+  font-weight: 500;
+
+  font-size: 15px;
+}
+
+/* BOTÃO */
+
+.partner-btn {
+  display: inline-block;
+
+  background: linear-gradient(
+    135deg,
+    #364C59,
+    #5C6A73
+  );
+
+  color: white;
+
+  text-decoration: none;
+
+  padding: 16px 34px;
+
+  border-radius: 18px;
+
+  font-weight: 600;
+
+  transition: 0.3s;
+}
+
+.partner-btn:hover {
+  transform: translateY(-3px);
+
+  opacity: 0.95;
+}
+
+/* RESPONSIVO */
+
+@media (max-width: 900px) {
+
+  .partner-card {
+    flex-direction: column;
+
+    text-align: center;
+  }
+
+  .partner-items {
+    justify-content: center;
+  }
+
+}
