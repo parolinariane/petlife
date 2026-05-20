@@ -3,19 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PetLife</title>
+    <title>Informações – PetLife</title>
     <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/info.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
 
     <header class="header">
         <div class="container nav-container">
-            
             <div class="logo-area">
                 <img src="../img/logo_horizontal.png" alt="PetLife" class="logo">
             </div>
-
             <nav class="nav">
                 <a href="../index.html">Início</a>
                 <a href="adocao.html">Adoção</a>
@@ -25,55 +24,369 @@
                 <a href="sobre.html">Sobre Nós</a>
                 <a href="contato.html" class="btn-nav">Contato</a>
             </nav>
-
         </div>
     </header>
 
     <div id="popup-servicos" class="popup">
         <div class="popup-content">
-            
             <a href="#" class="close-btn">&times;</a>
-
             <h2>Redirecionamento</h2>
             <p>Você será direcionado para o site de um parceiro de banho e tosa. Deseja continuar?</p>
-            
             <div class="popup-buttons">
                 <a href="https://landingpage.petz.com.br/banho-e-tosa/" target="_blank" class="btn btn-confirm">Sim</a>
                 <a href="#" class="btn btn-cancel">Não</a>
             </div>
-
         </div>
     </div>
 
-    <footer class="footer">
-        <div class="container footer-container">
+    <!-- HERO -->
+    <section class="info-hero">
+        <div class="container">
+            <span class="info-hero__badge">Guia de Cuidados</span>
+            <h1 class="info-hero__titulo">Informações e Dicas</h1>
+            <p class="info-hero__sub">
+                Tudo o que você precisa saber para cuidar bem do seu pet.<br>
+                Dicas de veterinários, alimentação, higiene e muito mais!
+            </p>
+            <!-- Navegação interna -->
+            <nav class="info-nav">
+                <a href="#caes" class="info-nav__link">🐶 Cães</a>
+                <a href="#gatos" class="info-nav__link">🐱 Gatos</a>
+                <a href="#higiene" class="info-nav__link">🛁 Higiene</a>
+                <a href="#veterinario" class="info-nav__link">🩺 Veterinário</a>
+            </nav>
+        </div>
+    </section>
 
+    <!-- BANNER ALERTA -->
+    <div class="info-aviso">
+        <div class="container info-aviso__inner">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+            <p>As informações desta página são educativas. Sempre consulte um médico veterinário para orientações específicas sobre o seu animal.</p>
+        </div>
+    </div>
+
+    <!-- SEÇÃO CÃES -->
+    <section class="info-secao" id="caes">
+        <div class="container">
+            <div class="info-secao__header">
+                <span class="info-secao__emoji">🐶</span>
+                <div>
+                    <h2 class="info-secao__titulo">Cuidados com Cães</h2>
+                    <p class="info-secao__desc">Dicas essenciais para o bem-estar e felicidade do seu cachorro.</p>
+                </div>
+            </div>
+
+            <div class="cards-grid">
+
+                <div class="card">
+                    <div class="card__icone card__icone--azul">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8h1a4 4 0 0 1 0 8h-1"/><path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"/><line x1="6" y1="1" x2="6" y2="4"/><line x1="10" y1="1" x2="10" y2="4"/><line x1="14" y1="1" x2="14" y2="4"/></svg>
+                    </div>
+                    <h3>Alimentação</h3>
+                    <ul class="card__lista">
+                        <li>Ofereça ração de qualidade adequada para a raça e tamanho</li>
+                        <li>Divida a alimentação em 2 a 3 refeições por dia</li>
+                        <li>Mantenha sempre água fresca disponível</li>
+                        <li>Evite alimentos humanos como chocolate, cebola e uva</li>
+                        <li>Respeite a quantidade recomendada na embalagem</li>
+                    </ul>
+                </div>
+
+                <div class="card">
+                    <div class="card__icone card__icone--verde">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                    </div>
+                    <h3>Exercícios e Passeios</h3>
+                    <ul class="card__lista">
+                        <li>Passeie pelo menos 2 vezes ao dia, de 20 a 30 minutos</li>
+                        <li>Adapte a intensidade ao porte e idade do cão</li>
+                        <li>Raças energéticas precisam de mais atividade física</li>
+                        <li>Brinquedos interativos ajudam a gastar energia em casa</li>
+                        <li>Evite exercícios no horário de pico de calor</li>
+                    </ul>
+                </div>
+
+                <div class="card">
+                    <div class="card__icone card__icone--roxo">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+                    </div>
+                    <h3>Saúde e Bem-estar</h3>
+                    <ul class="card__lista">
+                        <li>Mantenha vacinas e vermífugos em dia</li>
+                        <li>Faça consultas veterinárias ao menos 1 vez por ano</li>
+                        <li>Aplique antipulgas e carrapatos mensalmente</li>
+                        <li>Castração reduz riscos de doenças e comportamentos agressivos</li>
+                        <li>Observe mudanças de comportamento ou apetite</li>
+                    </ul>
+                </div>
+
+                <div class="card">
+                    <div class="card__icone card__icone--amarelo">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                    </div>
+                    <h3>Higiene</h3>
+                    <ul class="card__lista">
+                        <li>Banho a cada 15 dias (ou conforme orientação do veterinário)</li>
+                        <li>Escove os dentes 2 a 3 vezes por semana</li>
+                        <li>Limpe as orelhas semanalmente com produto específico</li>
+                        <li>Apare as unhas a cada 3 ou 4 semanas</li>
+                        <li>Escove o pelo regularmente para evitar nós</li>
+                    </ul>
+                </div>
+
+            </div>
+
+            <!-- Dica em destaque -->
+            <div class="dica-destaque">
+                <div class="dica-destaque__icone">💡</div>
+                <div>
+                    <strong>Dica do Veterinário</strong>
+                    <p>Cães são animais de matilha e precisam de interação social. Dedique tempo de qualidade com seu pet todos os dias — brincar e fazer carinho reduz ansiedade e fortalece o vínculo entre vocês.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- DIVISOR -->
+    <div class="info-divisor"></div>
+
+    <!-- SEÇÃO GATOS -->
+    <section class="info-secao" id="gatos">
+        <div class="container">
+            <div class="info-secao__header">
+                <span class="info-secao__emoji">🐱</span>
+                <div>
+                    <h2 class="info-secao__titulo">Cuidados com Gatos</h2>
+                    <p class="info-secao__desc">Entenda o comportamento felino e garanta uma vida saudável ao seu gato.</p>
+                </div>
+            </div>
+
+            <div class="cards-grid">
+
+                <div class="card">
+                    <div class="card__icone card__icone--azul">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8h1a4 4 0 0 1 0 8h-1"/><path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"/><line x1="6" y1="1" x2="6" y2="4"/><line x1="10" y1="1" x2="10" y2="4"/><line x1="14" y1="1" x2="14" y2="4"/></svg>
+                    </div>
+                    <h3>Alimentação</h3>
+                    <ul class="card__lista">
+                        <li>Use ração específica para gatos (nunca ração de cão)</li>
+                        <li>Gatos adultos comem de 2 a 3 vezes ao dia</li>
+                        <li>Água fresca é essencial — prefira bebedouros com circulação</li>
+                        <li>Alimentos proibidos: cebola, alho, chocolate e leite de vaca</li>
+                        <li>Ração úmida pode complementar a alimentação seca</li>
+                    </ul>
+                </div>
+
+                <div class="card">
+                    <div class="card__icone card__icone--verde">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                    </div>
+                    <h3>Enriquecimento Ambiental</h3>
+                    <ul class="card__lista">
+                        <li>Arranhadores evitam danos aos móveis e mantêm as unhas saudáveis</li>
+                        <li>Gatos adoram altura — invista em prateleiras e árvores felinas</li>
+                        <li>Brinque com seu gato ao menos 15 minutos por dia</li>
+                        <li>Ofereça janelas com vista para estimular o instinto caçador</li>
+                        <li>Caixas de papelão são brinquedos adorados pelos felinos</li>
+                    </ul>
+                </div>
+
+                <div class="card">
+                    <div class="card__icone card__icone--roxo">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+                    </div>
+                    <h3>Saúde e Bem-estar</h3>
+                    <ul class="card__lista">
+                        <li>Vacine anualmente contra as principais doenças felinas</li>
+                        <li>Consulte o veterinário ao menos 1 vez por ano</li>
+                        <li>Castração previne doenças e reduz o comportamento de fuga</li>
+                        <li>Use antipulgas adequado para gatos (nunca o de cão)</li>
+                        <li>Fique atento a mudanças no uso da caixa de areia</li>
+                    </ul>
+                </div>
+
+                <div class="card">
+                    <div class="card__icone card__icone--amarelo">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                    </div>
+                    <h3>Higiene</h3>
+                    <ul class="card__lista">
+                        <li>Gatos se limpam sozinhos, mas escove o pelo regularmente</li>
+                        <li>Limpe a caixa de areia diariamente e troque o substrato semanalmente</li>
+                        <li>Banhos são raramente necessários, salvo orientação veterinária</li>
+                        <li>Verifique as orelhas semanalmente em busca de sujeira ou ácaros</li>
+                        <li>Escove os dentes com pasta específica para gatos</li>
+                    </ul>
+                </div>
+
+            </div>
+
+            <div class="dica-destaque">
+                <div class="dica-destaque__icone">💡</div>
+                <div>
+                    <strong>Dica do Veterinário</strong>
+                    <p>Gatos são animais independentes, mas isso não significa que não precisam de atenção. Sinais como perda de apetite, letargia e isolamento podem indicar doenças. Observe o comportamento do seu felino diariamente.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    
+    <!-- DIVISOR -->
+    <div class="info-divisor"></div>
+
+    <!-- SEÇÃO HIGIENE -->
+    <section class="info-secao" id="higiene">
+        <div class="container">
+            <div class="info-secao__header">
+                <span class="info-secao__emoji">🛁</span>
+                <div>
+                    <h2 class="info-secao__titulo">Higiene</h2>
+                    <p class="info-secao__desc">Manter seu pet limpo é essencial para a saúde dele e de toda a família.</p>
+                </div>
+            </div>
+
+            <div class="higiene-lista">
+
+                <div class="higiene-item">
+                    <div class="higiene-item__num">01</div>
+                    <div class="higiene-item__corpo">
+                        <h4>Banho</h4>
+                        <p>Para <strong>cães</strong>, o banho deve ser dado a cada 15 dias com shampoo neutro ou específico para a raça. Evite molhar os ouvidos e use água morna. Seque bem após o banho para evitar fungos. Para <strong>gatos</strong>, o banho raramente é necessário — apenas se o veterinário recomendar ou em casos de sujeira extrema.</p>
+                    </div>
+                </div>
+
+                <div class="higiene-item">
+                    <div class="higiene-item__num">02</div>
+                    <div class="higiene-item__corpo">
+                        <h4>Escovação dos Dentes</h4>
+                        <p>A doença periodontal é um dos problemas mais comuns em pets. Use escova e pasta específica para animais (pasta humana é tóxica). Para cães, escove 2 a 3 vezes por semana. Comece o hábito ainda filhote para que o animal aceite mais facilmente.</p>
+                    </div>
+                </div>
+
+                <div class="higiene-item">
+                    <div class="higiene-item__num">03</div>
+                    <div class="higiene-item__corpo">
+                        <h4>Cuidado com as Orelhas</h4>
+                        <p>Limpe as orelhas semanalmente com algodão e solução auricular veterinária. Nunca use cotonetes no canal auditivo. Fique atento a mau cheiro, coçadas frequentes ou secreção — são sinais de infecção.</p>
+                    </div>
+                </div>
+
+                <div class="higiene-item">
+                    <div class="higiene-item__num">04</div>
+                    <div class="higiene-item__corpo">
+                        <h4>Corte das Unhas</h4>
+                        <p>Unhas longas causam desconforto e podem se encurvar machucando a pata. Apare a cada 3 ou 4 semanas com alicate próprio para pets. Tome cuidado para não cortar a parte rosada (nervos e vasos). Em caso de dúvida, leve ao petshop ou veterinário.</p>
+                    </div>
+                </div>
+
+                <div class="higiene-item">
+                    <div class="higiene-item__num">05</div>
+                    <div class="higiene-item__corpo">
+                        <h4>Escovação do Pelo</h4>
+                        <p>Escove o pelo regularmente para remover pêlos soltos e evitar nós. A frequência varia com o tipo de pelagem: pelos curtos precisam de escovação semanal, pelos longos exigem escovação diária. A escovação também estimula a circulação da pele.</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- DIVISOR -->
+    <div class="info-divisor"></div>
+
+    <!-- SEÇÃO VETERINÁRIO -->
+    <section class="info-secao info-secao--clara" id="veterinario">
+        <div class="container">
+            <div class="info-secao__header">
+                <span class="info-secao__emoji">🩺</span>
+                <div>
+                    <h2 class="info-secao__titulo">Dicas do Veterinário</h2>
+                    <p class="info-secao__desc">Sinais de alerta e quando correr para a clínica com seu pet.</p>
+                </div>
+            </div>
+
+            <div class="vet-grid">
+
+                <div class="vet-card vet-card--urgente">
+                    <h4>🚨 Sinais de Emergência</h4>
+                    <p class="vet-card__sub">Leve imediatamente ao veterinário se observar:</p>
+                    <ul>
+                        <li>Dificuldade para respirar ou engasgo</li>
+                        <li>Convulsões ou perda de consciência</li>
+                        <li>Vômitos ou diarreia com sangue</li>
+                        <li>Ingestão de produto tóxico ou medicamento</li>
+                        <li>Abdômen muito inchado e endurecido</li>
+                        <li>Incapacidade de urinar por mais de 12 horas</li>
+                        <li>Trauma (atropelamento, queda de altura)</li>
+                    </ul>
+                </div>
+
+                <div class="vet-card vet-card--atencao">
+                    <h4>⚠️ Consulta nos Próximos Dias</h4>
+                    <p class="vet-card__sub">Agende uma consulta se perceber:</p>
+                    <ul>
+                        <li>Perda de apetite por mais de 2 dias</li>
+                        <li>Letargia e desânimo persistentes</li>
+                        <li>Coceira intensa ou perda de pelo em placas</li>
+                        <li>Mudança repentina no comportamento</li>
+                        <li>Fezes muito moles ou muito duras por dias</li>
+                        <li>Olhos ou nariz com secreção incomum</li>
+                    </ul>
+                </div>
+
+                <div class="vet-card vet-card--rotina">
+                    <h4>📅 Calendário de Rotina</h4>
+                    <p class="vet-card__sub">Não esqueça de manter em dia:</p>
+                    <ul>
+                        <li><strong>Vacinas</strong> — siga o calendário do veterinário</li>
+                        <li><strong>Vermífugo</strong> — a cada 3 ou 6 meses</li>
+                        <li><strong>Antipulgas</strong> — mensal ou conforme o produto</li>
+                        <li><strong>Check-up</strong> — ao menos 1 vez por ano</li>
+                        <li><strong>Limpeza dental</strong> — quando indicada</li>
+                        <li><strong>Exames de sangue</strong> — anualmente após os 7 anos</li>
+                    </ul>
+                </div>
+
+            </div>
+
+            <div class="dica-destaque">
+                <div class="dica-destaque__icone">🩺</div>
+                <div>
+                    <strong>Lembre-se</strong>
+                    <p>Pets não conseguem expressar a dor verbalmente. Fique atento a qualquer mudança no comportamento, apetite ou disposição. A prevenção é sempre mais barata e menos dolorosa do que o tratamento.</p>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+
+       <footer class="footer">
+        <div class="container footer-container">
             <div class="footer-col">
                 <img src="../img/logo_slogan.png" alt="PetLife" class="footer-logo">
             </div>
-
             <div class="footer-col">
                 <h4>Links</h4>
                 <a href="../index.html">Início</a>
                 <a href="adocao.html">Adoção</a>
                 <a href="loja.html">Loja</a>
-                <a href="info.html">Informações</a>
+                <a href="info.html" class="active">Informações</a>
                 <a href="sobre.html">Sobre Nós</a>
                 <a href="contato.html">Contato</a>
             </div>
-
             <div class="footer-col">
                 <h4>Contato</h4>
                 <p>Email: contato@petlife.com</p>
                 <p>Telefone: (19) 99999-9999</p>
             </div>
-
         </div>
-
         <div class="footer-bottom">
             <p>© 2026 PetLife - Todos os direitos reservados</p>
         </div>
     </footer>
-    
+
 </body>
 </html>
