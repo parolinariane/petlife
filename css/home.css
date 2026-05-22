@@ -34,16 +34,6 @@
   margin-bottom: 25px;
 }
 
-.hero-content h1::after {
-  content: "";
-  display: block;
-  width: 70px;
-  height: 4px;
-  background: #6C63FF;
-  margin-top: 20px;
-  border-radius: 10px;
-}
-
 .hero-content p {
   font-size: 18px;
   color: #E5E7EB;
