@@ -111,6 +111,7 @@ body {
   opacity: 0;
   pointer-events: none;
   transition: 0.3s;
+  z-index: 100;
 }
 
 .popup:target {
@@ -237,6 +238,3 @@ body {
   margin-top: -45px;
   height: 400px;
 }
-
-/*Ariane*/
-/* HERO */
