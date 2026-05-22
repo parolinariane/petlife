@@ -86,19 +86,13 @@
 .stats {
   width: 90%;
   margin: -70px auto 80px auto;
-
   background: white;
-
   border-radius: 28px;
-
   display: flex;
   justify-content: space-around;
   align-items: center;
-
   padding: 45px 30px;
-
   box-shadow: 0 20px 40px rgba(0,0,0,0.08);
-
   position: relative;
   z-index: 10;
 }
@@ -112,15 +106,11 @@
 .stats-card:not(:last-child)::after {
   content: "";
   position: absolute;
-
   right: -55px;
   top: 50%;
-
   transform: translateY(-50%);
-
   width: 1px;
   height: 70px;
-
   background-color: #d8dde0;
 }
 
