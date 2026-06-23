@@ -1,0 +1,310 @@
+.carrinho {
+    max-width: 900px;
+
+    margin: 50px auto;
+
+    padding: 20px;
+}
+
+.carrinho h1 {
+    color: #364C59;
+
+    margin-bottom: 30px;
+}
+
+.item-carrinho {
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    padding: 15px;
+
+    margin-bottom: 15px;
+
+    background: #F2F2F2;
+
+    border-radius: 10px;
+
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+}
+
+.item-carrinho span {
+    font-weight: 700;
+
+    color: #364C59;
+}
+
+#total {
+    margin-top: 30px;
+
+    color: #364C59;
+}
+
+#finalizarCompra {
+    margin-top: 20px;
+
+    background: #364C59;
+
+    color: white;
+
+    border: none;
+
+    padding: 15px 25px;
+
+    border-radius: 10px;
+
+    cursor: pointer;
+}
+
+.btn-remover {
+    background: #d9534f;
+
+    color: white;
+
+    border: none;
+
+    padding: 10px 14px;
+
+    border-radius: 8px;
+
+    cursor: pointer;
+
+    transition: .3s;
+}
+
+.btn-remover:hover {
+    background: #c9302c;
+}
+
+.carrinho-vazio {
+    text-align: center;
+
+    padding: 40px;
+
+    background: #F2F2F2;
+
+    border-radius: 12px;
+}
+
+.modal {
+    display: none;
+
+    position: fixed;
+
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 100%;
+
+    background: rgba(0,0,0,.6);
+
+    justify-content: center;
+    align-items: center;
+
+    z-index: 9999;
+}
+
+.modal-content {
+    background: white;
+
+    width: 90%;
+    max-width: 500px;
+
+    padding: 30px;
+
+    border-radius: 15px;
+
+    position: relative;
+
+    display: flex;
+    flex-direction: column;
+}
+
+.modal-content h2 {
+    color: #364C59;
+
+    margin-bottom: 20px;
+
+    text-align: center;
+}
+
+.modal-content form {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.modal-content input {
+    padding: 12px;
+
+    border: 1px solid #ccc;
+
+    border-radius: 8px;
+
+    font-family: Poppins, sans-serif;
+}
+
+.linha-pagamento {
+    display: flex;
+    gap: 10px;
+}
+
+.btn-pagar {
+    background: #364C59;
+
+    color: white;
+
+    border: none;
+
+    padding: 14px;
+
+    border-radius: 10px;
+
+    cursor: pointer;
+
+    margin-top: 10px;
+}
+
+.btn-pagar:hover {
+    background: #5C6A73;
+}
+
+#fecharModal {
+    position: absolute;
+
+    top: 10px;
+    right: 15px;
+
+    font-size: 28px;
+
+    cursor: pointer;
+}
+
+.pagamento-modal {
+    max-width: 600px;
+}
+
+.cartao-preview {
+    margin-bottom: 25px;
+}
+
+.cartao-frente {
+    background: linear-gradient(
+        135deg,
+        #364C59,
+        #5C6A73
+    );
+
+    color: white;
+
+    padding: 25px;
+
+    border-radius: 18px;
+
+    min-height: 210px;
+
+    box-shadow:
+        0 15px 30px rgba(0,0,0,.25);
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.cartao-topo {
+    display: flex;
+    justify-content: space-between;
+
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.cartao-numero {
+    font-size: 1.5rem;
+
+    letter-spacing: 3px;
+
+    text-align: center;
+
+    margin: 20px 0;
+}
+
+.cartao-rodape {
+    display: flex;
+    justify-content: space-between;
+}
+
+.cartao-rodape small {
+    opacity: .8;
+}
+
+.cartao-rodape p {
+    margin-top: 5px;
+
+    font-weight: 600;
+}
+
+#toast {
+    position: fixed;
+
+    top: 20px;
+    right: 20px;
+
+    background: #364C59;
+    color: white;
+
+    padding: 15px 20px;
+
+    border-radius: 10px;
+
+    font-family: Poppins, sans-serif;
+
+    box-shadow: 0 5px 20px rgba(0,0,0,.2);
+
+    opacity: 0;
+    transform: translateY(-20px);
+
+    transition: .3s;
+
+    z-index: 99999;
+}
+
+#toast.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.modal-sucesso {
+    background: white;
+
+    padding: 40px;
+
+    border-radius: 20px;
+
+    text-align: center;
+
+    width: 90%;
+    max-width: 450px;
+}
+
+.check-sucesso {
+    width: 80px;
+    height: 80px;
+
+    margin: 0 auto 20px;
+
+    border-radius: 50%;
+
+    background: #28a745;
+
+    color: white;
+
+    font-size: 40px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

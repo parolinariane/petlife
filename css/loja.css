@@ -176,3 +176,75 @@
 .banner-content a:hover {
   transform: translateY(-5px);
 }
+
+
+.btn-comprar {
+    width: 100%;
+
+    padding: 8px 12px;
+
+    background-color: #364C59;
+    color: #F2F2F2;
+
+    border: none;
+    border-radius: 10px;
+
+    font-family: 'Poppins', sans-serif;
+    font-size: 0.8rem;
+    font-weight: 600;
+    white-space: nowrap;
+
+    cursor: pointer;
+
+    transition: all 0.3s ease;
+
+    box-shadow: 0 4px 10px rgba(54, 76, 89, 0.25);
+}
+
+.btn-comprar:hover {
+    background-color: #5C6A73;
+
+    transform: translateY(-2px);
+
+    box-shadow: 0 8px 18px rgba(54, 76, 89, 0.35);
+}
+
+.btn-comprar:active {
+    transform: translateY(0);
+
+    box-shadow: 0 3px 8px rgba(54, 76, 89, 0.25);
+}
+
+.btn-comprar:focus {
+    outline: none;
+}
+
+#toast {
+    position: fixed;
+
+    top: 20px;
+    right: 20px;
+
+    background: #364C59;
+    color: white;
+
+    padding: 15px 20px;
+
+    border-radius: 10px;
+
+    font-family: Poppins, sans-serif;
+
+    box-shadow: 0 5px 20px rgba(0,0,0,.2);
+
+    opacity: 0;
+    transform: translateY(-20px);
+
+    transition: .3s;
+
+    z-index: 99999;
+}
+
+#toast.show {
+    opacity: 1;
+    transform: translateY(0);
+}
