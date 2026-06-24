@@ -1,5 +1,121 @@
-/* LISTA DOS CARDS */
-.lista{
+.adocao-hero {
+    position: relative;
+
+    width: 100%;
+    height: 70vh;
+
+    overflow: hidden;
+
+    display: flex;
+    align-items: center;
+}
+
+.adocao-hero img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+}
+
+.adocao-overlay {
+    position: absolute;
+
+    width: 100%;
+    height: 100%;
+
+    background: linear-gradient(
+        90deg,
+        rgba(54,76,89,0.92),
+        rgba(54,76,89,0.55),
+        rgba(54,76,89,0.15)
+    );
+
+    z-index: 1;
+}
+
+.adocao-hero-content {
+    position: absolute;
+
+    z-index: 2;
+
+    padding-left: 8%;
+
+    color: white;
+
+    max-width: 700px;
+}
+
+.adocao-hero-content span {
+    display: inline-block;
+
+    margin-bottom: 20px;
+
+    background-color: rgba(255,255,255,0.15);
+
+    padding: 10px 18px;
+
+    border-radius: 999px;
+
+    backdrop-filter: blur(8px);
+}
+
+.adocao-hero-content h1 {
+    font-size: 52px;
+
+    line-height: 1.1;
+
+    margin-bottom: 25px;
+}
+
+.adocao-hero-content p {
+    font-size: 18px;
+
+    line-height: 1.8;
+
+    color: #dce2e5;
+
+    margin-bottom: 30px;
+}
+
+.btn-hero {
+    display: inline-block;
+
+    padding: 14px 28px;
+
+    background: white;
+
+    color: #364C59;
+
+    border-radius: 10px;
+
+    text-decoration: none;
+
+    font-weight: 600;
+
+    transition: 0.3s;
+}
+
+.btn-hero:hover {
+    transform: translateY(-3px);
+}
+
+
+/* =========================
+   CORES DO SITE
+========================= */
+:root {
+    --bg: #ffffff;
+    --text: #333;
+    --primary: #364C59;
+    --secondary: #5C6A73;
+
+    --shadow: rgba(0, 0, 0, 0.1);
+}
+
+/* =========================
+   LISTA DOS CARDS
+========================= */
+.lista {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
@@ -7,47 +123,251 @@
     margin: 40px;
 }
 
-/* CARD */
-.card{
+/* =========================
+   CARD
+========================= */
+.card {
     width: 300px;
-    background-color: white;
-    border-radius: 10px;
+    background: var(--bg);
+    border-radius: 12px;
     padding: 15px;
     text-align: center;
-    box-shadow: 0px 0px 10px rgba(0,0,0,0.1);
+
+    box-shadow: 0 4px 12px var(--shadow);
+    transition: 0.3s;
+    cursor: pointer;
 }
 
-/* IMAGEM */
-.card img{
+/* efeito ao passar o mouse */
+.card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 25px var(--shadow);
+}
+
+/* imagem */
+.card img {
     width: 100%;
+    height: 220px;
+    object-fit: cover;
     border-radius: 10px;
+    transition: 0.3s;
 }
 
-/* TÍTULO */
-.card h1{
+/* zoom na imagem */
+.card:hover img {
+    transform: scale(1.05);
+}
+
+/* título */
+.card h1 {
     margin-top: 10px;
-    color: #364C59;
+    color: var(--primary);
 }
 
-/* TEXTO */
-.card p{
+/* texto */
+.card p {
     margin: 10px 0;
+    color: var(--text);
 }
 
-/* BOTÃO */
-.card .btn{
+/* =========================
+   BOTÃO DO CARD
+========================= */
+.card .btn {
     display: inline-block;
     margin-top: 10px;
-    background-color: #364C59;
+
+    background: var(--primary);
     color: white;
+
     padding: 10px 20px;
     border-radius: 8px;
+
     text-decoration: none;
+    transition: 0.3s;
 }
 
-/* HOVER BOTÃO */
-.card .btn:hover{
-    background-color: #5C6A73;
+.card .btn:hover {
+    background: var(--secondary);
 }
 
+/* =========================
+   BOTÃO HOME
+========================= */
+.btn-home {
+    position: fixed;
+    top: 90px;
+    left: 20px;
 
+    background: var(--primary);
+    color: white;
+
+    padding: 10px 16px;
+    border-radius: 12px;
+
+    text-decoration: none;
+    font-weight: 600;
+
+    box-shadow: 0 6px 15px var(--shadow);
+    transition: 0.3s;
+
+    z-index: 2000;
+}
+
+.btn-home:hover {
+    transform: translateY(-3px);
+}
+
+/* =========================
+   BOTÃO FAVORITOS
+========================= */
+.fav-btn {
+    margin-top: 10px;
+
+    background: transparent;
+    border: 1px solid #ddd;
+
+    padding: 8px 12px;
+    border-radius: 8px;
+
+    cursor: pointer;
+    font-size: 14px;
+
+    transition: 0.3s;
+}
+
+.fav-btn:hover {
+    background: #f2f2f2;
+    transform: translateY(-2px);
+}
+
+.fav-btn.active {
+    background: #ff4d6d;
+    color: white;
+    border-color: #ff4d6d;
+}
+
+/* =========================
+   CELULAR
+========================= */
+@media (max-width: 700px) {
+    .lista {
+        margin: 20px;
+        gap: 15px;
+    }
+
+    .card {
+        width: 100%;
+        max-width: 320px;
+    }
+}
+
+/* ========================================
+   GERADOR DE NOMES
+======================================== */
+
+.gerador-nomes {
+
+    padding: 80px 20px;
+
+    background: #F2F2F2;
+
+    text-align: center;
+
+}
+
+.gerador-nomes h2 {
+
+    color: #364C59;
+
+    margin-bottom: 10px;
+
+}
+
+.gerador-nomes p {
+
+    color: #5C6A73;
+
+    margin-bottom: 30px;
+
+}
+
+.gerador-form {
+
+    display: flex;
+
+    justify-content: center;
+
+    gap: 15px;
+
+    flex-wrap: wrap;
+
+}
+
+.gerador-form select {
+
+    padding: 12px;
+
+    border-radius: 10px;
+
+    border: 1px solid #B8BCBF;
+
+    font-family: Poppins, sans-serif;
+
+}
+
+.gerador-form button {
+
+    background: #364C59;
+
+    color: white;
+
+    border: none;
+
+    padding: 12px 24px;
+
+    border-radius: 10px;
+
+    cursor: pointer;
+
+    transition: .3s;
+
+    font-family: Poppins, sans-serif;
+
+}
+
+.gerador-form button:hover {
+
+    background: #5C6A73;
+
+}
+
+.resultado-nome {
+    margin-top: 25px;
+    min-height: 60px;
+
+    font-size: 2rem;
+    font-weight: 700;
+
+    color: #364C59;
+
+    transition: all 0.3s ease;
+}
+
+.animando {
+    animation: pulse 0.15s infinite;
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.08);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
