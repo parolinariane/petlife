@@ -6,6 +6,7 @@
     <title>Contato – PetLife</title>
     <link rel="stylesheet" href="../css/style.css">
     <link rel="stylesheet" href="../css/contato.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
@@ -15,20 +16,21 @@
             <div class="logo-area">
                 <img src="../img/logo_horizontal.png" alt="PetLife" class="logo">
             </div>
-             <nav class="nav">
-                <a href="../index.html">Início</a>
-                <a href="adocao.html">Adoção</a>
-                <a href="loja.html">Loja</a>
+            <nav class="nav">
+                <a href="index.html" class="active">Início</a>
+                <a href="pages/adocao.html">Adoção</a>
+                <a href="pages/loja.html">Loja</a>
                 <a href="#popup-servicos">Serviços</a>
-                <a href="info.html">Informações</a>
-                <a href="quiz.html">Quiz</a>
-                <a href="sobre.html">Sobre Nós</a>
-                <a href="favoritos.html">Favoritos ❤️</a>
-                <a href="contato.html" class="btn-nav active">Contato</a>
+                <a href="pages/info.html">Informações</a>
+		        <a href="quiz.html">Quiz</a>
+                <a href="pages/sobre.html">Sobre Nós</a>
+                <a href="favoritos.html" class="active">Favoritos ❤️</a>
+                <a href="contato.html" class="btn-nav">Contato</a>
                 <a href="carrinho.html">
                     🛒 <span id="contador-carrinho">0</span>
                 </a>
             </nav>
+
         </div>
     </header>
 
@@ -65,56 +67,80 @@
                 <h2>Envie uma mensagem</h2>
                 <p class="contato-form-wrap__desc">Preencha o formulário abaixo e retornaremos o mais breve possível.</p>
 
-                <form class="contato-form" action="obrigado.html" method="GET">
+                <!-- Área animada: form e sucesso ficam aqui dentro -->
+                <div class="form-area">
 
-                    <div class="form-linha">
-                        <div class="form-grupo">
-                            <label for="nome">Nome completo *</label>
-                            <input type="text" id="nome" name="nome" placeholder="Seu nome completo" required>
+                    <form class="contato-form" id="contatoForm" novalidate>
+
+                        <div class="form-linha">
+                            <div class="form-grupo">
+                                <label for="nome">Nome completo *</label>
+                                <input type="text" id="nome" name="nome" placeholder="Seu nome completo" required>
+                                <span class="form-erro" id="err-nome">Por favor, informe seu nome.</span>
+                            </div>
+                            <div class="form-grupo">
+                                <label for="email">E-mail *</label>
+                                <input type="email" id="email" name="email" placeholder="seu@email.com" required>
+                                <span class="form-erro" id="err-email">Informe um e-mail válido.</span>
+                            </div>
                         </div>
-                        <div class="form-grupo">
-                            <label for="email">E-mail *</label>
-                            <input type="email" id="email" name="email" placeholder="seu@email.com" required>
+
+                        <div class="form-linha">
+                            <div class="form-grupo">
+                                <label for="telefone">Telefone</label>
+                                <input type="tel" id="telefone" name="telefone" placeholder="(00) 00000-0000" maxlength="15">
+                                <span class="form-erro" id="err-telefone">Informe um telefone válido: (00) 00000-0000.</span>
+                            </div>
+                            <div class="form-grupo">
+                                <label for="assunto">Assunto *</label>
+                                <select id="assunto" name="assunto" required>
+                                    <option value="" disabled selected>Selecione o assunto</option>
+                                    <option value="adocao">Adoção</option>
+                                    <option value="loja">Loja / Produtos</option>
+                                    <option value="servicos">Serviços (Banho e Tosa)</option>
+                                    <option value="informacoes">Informações sobre Pets</option>
+                                    <option value="parceria">Parceria</option>
+                                    <option value="outro">Outro</option>
+                                </select>
+                                <span class="form-erro" id="err-assunto">Selecione um assunto.</span>
+                            </div>
                         </div>
+
+                        <div class="form-grupo form-grupo--full">
+                            <label for="mensagem">Mensagem *</label>
+                            <textarea id="mensagem" name="mensagem" rows="5" placeholder="Escreva sua mensagem aqui..." required></textarea>
+                            <span class="form-erro" id="err-mensagem">Por favor, escreva sua mensagem.</span>
+                        </div>
+
+                        <div class="form-grupo form-grupo--full form-check">
+                            <label class="check-label">
+                                <input type="checkbox" id="lgpd" name="lgpd" required>
+                                <span>Concordo com o uso dos meus dados para fins de atendimento, conforme a <a href="#">Política de Privacidade</a>.</span>
+                            </label>
+                            <span class="form-erro" id="err-lgpd">Você precisa aceitar para continuar.</span>
+                        </div>
+
+                        <button type="submit" class="btn-enviar">
+                            <span class="btn-enviar__texto">Enviar Mensagem</span>
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m22 2-7 20-4-9-9-4Z"/><path d="M22 2 11 13"/></svg>
+                        </button>
+
+                    </form>
+
+                    <!-- Mensagem de sucesso (começa escondida) -->
+                    <div class="form-sucesso" id="formSucesso">
+                        <div class="form-sucesso__icone">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><path d="m9 11 3 3L22 4"/></svg>
+                        </div>
+                        <h3>Mensagem enviada!</h3>
+                        <p>Obrigado pelo contato, <strong id="nomeEnviado"></strong>.<br>Nossa equipe responderá em até 24 horas.</p>
+                        <button class="btn-novo" id="btnNovo">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"/><path d="M3 3v5h5"/></svg>
+                            Enviar nova mensagem
+                        </button>
                     </div>
 
-                    <div class="form-linha">
-                        <div class="form-grupo">
-                            <label for="telefone">Telefone</label>
-                            <input type="tel" id="telefone" name="telefone" placeholder="(00) 00000-0000">
-                        </div>
-                        <div class="form-grupo">
-                            <label for="assunto">Assunto *</label>
-                            <select id="assunto" name="assunto" required>
-                                <option value="" disabled selected>Selecione o assunto</option>
-                                <option value="adocao">Adoção</option>
-                                <option value="loja">Loja / Produtos</option>
-                                <option value="servicos">Serviços (Banho e Tosa)</option>
-                                <option value="informacoes">Informações sobre Pets</option>
-                                <option value="parceria">Parceria</option>
-                                <option value="outro">Outro</option>
-                            </select>
-                        </div>
-                    </div>
-
-                    <div class="form-grupo form-grupo--full">
-                        <label for="mensagem">Mensagem *</label>
-                        <textarea id="mensagem" name="mensagem" rows="5" placeholder="Escreva sua mensagem aqui..." required></textarea>
-                    </div>
-
-                    <div class="form-grupo form-grupo--full form-check">
-                        <label class="check-label">
-                            <input type="checkbox" id="lgpd" name="lgpd" required>
-                            <span>Concordo com o uso dos meus dados para fins de atendimento, conforme a <a href="#">Política de Privacidade</a>.</span>
-                        </label>
-                    </div>
-
-                    <button type="submit" class="btn-enviar">
-                        <span class="btn-enviar__texto">Enviar Mensagem</span>
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m22 2-7 20-4-9-9-4Z"/><path d="M22 2 11 13"/></svg>
-                    </button>
-
-                </form>
+                </div>
             </div>
 
             <!-- ASIDE -->
@@ -157,6 +183,85 @@
         </div>
     </section>
 
+    <!-- MAPA DE FEIRAS DE ADOÇÃO -->
+    <section class="feiras-secao">
+        <div class="container">
+
+            <div class="feiras-header">
+                <span class="feiras-badge">Hortolândia – SP</span>
+                <h2 class="feiras-titulo">Feiras de Adoção</h2>
+                <p class="feiras-sub">Encontre feiras de adoção de pets perto de você e dê um lar para quem precisa de amor.</p>
+            </div>
+
+            <div class="feiras-layout">
+
+                <!-- Mapa -->
+                <div id="mapa-feiras"></div>
+
+                <!-- Lista de feiras -->
+                <div class="feiras-lista">
+
+                    <div class="feira-card">
+                        <div class="feira-card__num">01</div>
+                        <div class="feira-card__info">
+                            <h4>Feira Amor em Patas</h4>
+                            <span>Shopping Hortolândia</span>
+                            <small>R. José Camilo de Camargo, 5 - Remanso Campineiro</small>
+                        </div>
+                        <a href="https://maps.google.com/?q=-22.8636357,-47.2134791" target="_blank" class="feira-card__btn" title="Ver no Google Maps">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+                        </a>
+                    </div>
+
+                    <div class="feira-card">
+                        <div class="feira-card__num">02</div>
+                        <div class="feira-card__info">
+                            <h4>Adote um Amigo</h4>
+                            <span>Parque Socioambiental Irmã Dorothy</span>
+                            <small>R. Manoel Antônio da Silva, 415 - Jd. São Benedito</small>
+                        </div>
+                        <a href="https://maps.google.com/?q=-22.8964397,-47.1694568" target="_blank" class="feira-card__btn" title="Ver no Google Maps">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+                        </a>
+                    </div>
+
+                    <div class="feira-card">
+                        <div class="feira-card__num">03</div>
+                        <div class="feira-card__info">
+                            <h4>Adote Petz</h4>
+                            <span>Petz Hortolândia</span>
+                            <small>Av. Santana, 970 - Parque Ortolândia</small>
+                        </div>
+                        <a href="https://maps.google.com/?q=-22.8695451,-47.2263751" target="_blank" class="feira-card__btn" title="Ver no Google Maps">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+                        </a>
+                    </div>
+
+                    <div class="feira-card">
+                        <div class="feira-card__num">04</div>
+                        <div class="feira-card__info">
+                            <h4>Feira IFSP</h4>
+                            <span>IFSP Campus Hortolândia</span>
+                            <small>Av. Thereza Ana Cecon Breda, 1896 - Vila São Pedro</small>
+                        </div>
+                        <a href="https://maps.google.com/?q=-22.8509368,-47.2311636" target="_blank" class="feira-card__btn" title="Ver no Google Maps">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+                        </a>
+                    </div>
+
+                    <div class="feira-card feira-card--aviso">
+                        <div class="feira-card__aviso-icone">🔒</div>
+                        <div class="feira-card__info">
+                            <h4>Endereço da ONG</h4>
+                            <small>Para preservar a segurança dos animais e evitar abandonos irresponsáveis, não divulgamos o endereço da ONG.</small>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
     <footer class="footer">
         <div class="footer-container">
             <div class="footer-col">
@@ -168,7 +273,6 @@
                 <a href="adocao.html">Adoção</a>
                 <a href="loja.html">Loja</a>
                 <a href="info.html">Informações</a>
-                <a href="quiz.html">Quiz</a>
                 <a href="sobre.html">Sobre Nós</a>
                 <a href="contato.html" class="active">Contato</a>
             </div>
@@ -183,7 +287,8 @@
         </div>
     </footer>
 
-    <script src="../js/main.js"></script>
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script src="../js/contato.js"></script>
 
 </body>
 </html>
