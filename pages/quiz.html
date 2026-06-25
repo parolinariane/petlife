@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz de Pets – PetLife</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/quiz.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <header class="header">
+        <div class="nav-container">
+            <div class="logo-area">
+                <img src="../img/logo_horizontal.png" alt="PetLife" class="logo">
+            </div>
+            <nav class="nav">
+                <a href="../index.html">Início</a>
+                <a href="adocao.html">Adoção</a>
+                <a href="loja.html">Loja</a>
+                <a href="#popup-servicos">Serviços</a>
+                <a href="info.html">Informações</a>
+                <a href="quiz.html" class="active">Quiz</a>
+                <a href="sobre.html">Sobre Nós</a>
+                <a href="favoritos.html">Favoritos ❤️</a>
+                <a href="contato.html" class="btn-nav">Contato</a>
+                <a href="carrinho.html">
+                    🛒 <span id="contador-carrinho">0</span>
+                </a>
+            </nav>
+        </div>
+    </header>
+
+    <div id="popup-servicos" class="popup">
+        <div class="popup-content">
+            <a href="#" class="close-btn">&times;</a>
+            <h2>Redirecionamento</h2>
+            <p>Você será direcionado para o site de um parceiro de banho e tosa. Deseja continuar?</p>
+            <div class="popup-buttons">
+                <a href="https://landingpage.petz.com.br/banho-e-tosa/" target="_blank" class="btn btn-confirm">Sim</a>
+                <a href="#" class="btn btn-cancel">Não</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- HERO -->
+    <section class="quiz-hero">
+        <div class="container">
+            <span class="quiz-hero__badge">Teste seus Conhecimentos</span>
+            <h1 class="quiz-hero__titulo">Quiz de Cuidados com Pets</h1>
+            <p class="quiz-hero__sub">
+                20 perguntas divididas em 4 blocos temáticos.<br>
+                Descubra o quanto você sabe sobre cães, gatos, higiene e saúde!
+            </p>
+        </div>
+    </section>
+
+    <!-- ÁREA DO QUIZ -->
+    <section class="quiz-secao">
+        <div class="container">
+
+            <!-- TELA INICIAL -->
+            <div class="quiz-intro" id="telaIntro">
+                <div class="quiz-intro__card">
+                    <div class="quiz-intro__emoji">🐾</div>
+                    <h2>Pronto para o desafio?</h2>
+                    <p>Você vai responder <strong>20 perguntas</strong> baseadas nas informações da nossa página de cuidados com pets.</p>
+                    <div class="quiz-intro__blocos">
+                        <div class="bloco-pill">🐶 Cães <span>5 perguntas</span></div>
+                        <div class="bloco-pill">🐱 Gatos <span>5 perguntas</span></div>
+                        <div class="bloco-pill">🛁 Higiene <span>5 perguntas</span></div>
+                        <div class="bloco-pill">🩺 Veterinário <span>5 perguntas</span></div>
+                    </div>
+                    <button class="btn-comecar" id="btnComecar">Começar Quiz</button>
+                </div>
+            </div>
+
+            <!-- TELA DO QUIZ -->
+            <div class="quiz-wrapper" id="telaQuiz" style="display:none;">
+
+                <!-- Progresso geral -->
+                <div class="quiz-progresso">
+                    <div class="quiz-progresso__topo">
+                        <span class="quiz-progresso__bloco" id="labelBloco"></span>
+                        <span class="quiz-progresso__num" id="labelNum"></span>
+                    </div>
+                    <div class="quiz-progresso__barra">
+                        <div class="quiz-progresso__fill" id="barraFill"></div>
+                    </div>
+                </div>
+
+                <!-- Card da pergunta -->
+                <div class="quiz-card" id="quizCard">
+                    <p class="quiz-card__pergunta" id="textoPergunta"></p>
+                    <div class="quiz-card__opcoes" id="containerOpcoes"></div>
+                </div>
+
+                <!-- Navegação -->
+                <div class="quiz-nav">
+                    <button class="btn-quiz-nav btn-anterior" id="btnAnterior">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m15 18-6-6 6-6"/></svg>
+                        Anterior
+                    </button>
+                    <button class="btn-quiz-nav btn-proximo" id="btnProximo">
+                        Próxima
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg>
+                    </button>
+                    <button class="btn-finalizar" id="btnFinalizar" style="display:none;">
+                        Ver Resultado
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><path d="m9 11 3 3L22 4"/></svg>
+                    </button>
+                </div>
+
+                <!-- Aviso de pergunta não respondida -->
+                <p class="quiz-aviso" id="avisoResposta">⚠️ Selecione uma resposta antes de continuar.</p>
+
+            </div>
+
+            <!-- TELA DE RESULTADO -->
+            <div class="quiz-resultado" id="telaResultado" style="display:none;">
+                <div class="resultado-card">
+
+                    <div class="resultado-emoji" id="resultadoEmoji"></div>
+                    <h2 class="resultado-titulo" id="resultadoTitulo"></h2>
+                    <div class="resultado-pontos">
+                        <span id="resultadoPontos"></span>
+                        <small>de 20 perguntas</small>
+                    </div>
+                    <p class="resultado-msg" id="resultadoMsg"></p>
+
+                    <!-- Placar por bloco -->
+                    <div class="resultado-blocos" id="resultadoBlocos"></div>
+
+                    <div class="resultado-botoes">
+                        <button class="btn-refazer" id="btnRefazer">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"/><path d="M3 3v5h5"/></svg>
+                            Refazer Quiz
+                        </button>
+                        <a href="info.html" class="btn-info">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4"/><path d="M12 8h.01"/></svg>
+                            Ver Informações
+                        </a>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container footer-container">
+            <div class="footer-col">
+                <img src="../img/logo_slogan.png" alt="PetLife" class="footer-logo">
+            </div>
+            <div class="footer-col">
+                <h4>Links</h4>
+                <a href="../index.html">Início</a>
+                <a href="adocao.html">Adoção</a>
+                <a href="loja.html">Loja</a>
+                <a href="info.html">Informações</a>
+                <a href="quiz.html" class="active">Quiz</a>
+                <a href="sobre.html">Sobre Nós</a>
+                <a href="contato.html">Contato</a>
+            </div>
+            <div class="footer-col">
+                <h4>Contato</h4>
+                <p>Email: contato@petlife.com</p>
+                <p>Telefone: (19) 99999-9999</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2026 PetLife - Todos os direitos reservados</p>
+        </div>
+    </footer>
+
+    <script src="../js/quiz.js"></script>
+    <script src="../js/main.js"></script>
+
+</body>
+</html>

@@ -35,117 +35,121 @@ body {
 }
 
 /* =========================
-   NAVBAR
+   VOLTAR 
 ========================= */
-.header {
-  background: var(--nav-bg);
-  position: sticky;
-  top: 0;
+.voltar-area {
+  margin-top: 25px;
+  margin-left: 20px;
+  margin-bottom: 20px;
 }
 
-/* links da navbar */
-.nav {
-  display: flex;
-  gap: 20px;
-}
-
-.nav a {
-  color: var(--nav-text);
-  text-decoration: none;
-}
-
-/* botão da navbar */
-.btn-nav {
-  background: var(--secondary);
-  color: white;
-  padding: 8px 14px;
-  border-radius: 8px;
-}
-
-/* =========================
-   BOTÕES GERAIS
-========================= */
-.btn {
-  padding: 10px 18px;
-  border-radius: 8px;
-  text-decoration: none;
-  display: inline-block;
-}
-
-/* botão confirmar */
-.btn-confirm {
-  background: var(--primary);
-  color: white;
-}
-
-/* botão cancelar */
-.btn-cancel {
-  background: var(--light-gray);
-  color: var(--text);
-}
-
-/* =========================
-   POPUP
-========================= */
-.popup-content {
-  background: white;
-  padding: 20px;
-  border-radius: 12px;
-  box-shadow: 0 10px 20px var(--shadow);
-}
-
-/* botão de fechar popup */
-.close-btn {
-  position: absolute;
-  top: 10px;
-  right: 15px;
-  font-size: 20px;
-}
-
-/* =========================
-   FOOTER
-========================= */
-.footer {
-  background: var(--primary);
-  color: white;
-  padding: 30px;
-}
-
-.footer-bottom {
-  text-align: center;
-  padding: 10px;
-  background: #2b3c47;
-}
-
-/* =========================
-   BOTÃO VOLTAR
-========================= */
 .btn-voltar {
-  padding: 10px 15px;
-  border: 1px solid var(--border);
-  border-radius: 8px;
+  display: inline-block;
+  padding: 12px 22px;
+  border-radius: 10px;
   text-decoration: none;
+  font-weight: 600;
+  background: var(--primary);
+  color: white;
+  box-shadow: 0 4px 10px var(--shadow);
+  transition: 0.3s;
+  border: none;
+}
+
+.btn-voltar:hover {
+  transform: translateY(-2px);
+  background: var(--secondary);
 }
 
 /* =========================
-   PETS (IMAGENS)
+   CONTAINER PRINCIPAL
+========================= */
+.pet-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+}
+
+/* =========================
+   IMAGENS (lado a lado e naturais)
 ========================= */
 .pet-imagens {
-  display: grid;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
   gap: 15px;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  margin-bottom: 25px;
 }
 
 .pet-imagens img {
-  width: 100%;
+  width: 180px;   /* diminui o tamanho */
+  height: auto;
   border-radius: 12px;
+  object-fit: cover;
+}
+
+/* =========================
+   INFORMAÇÕES
+========================= */
+.pet-info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  max-width: 800px;
+  gap: 8px;
+}
+
+/* =========================
+   BOTÃO "TENHO INTERESSE"
+========================= */
+.pet-info .btn {
+  background: var(--primary);
+  color: white;
+  padding: 12px 22px;
+  border-radius: 10px;
+  text-decoration: none;
+  font-weight: 600;
+  box-shadow: 0 4px 10px var(--shadow);
+  transition: 0.3s;
+}
+
+.pet-info .btn:hover {
+  transform: translateY(-2px);
+  background: var(--secondary);
+}
+
+/* =========================
+   BOTÃO FAVORITAR
+========================= */
+.fav-btn {
+  padding: 10px 14px;
+  border-radius: 10px;
+  border: 1px solid var(--border);
+  background: white;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.fav-btn:hover {
+  background: var(--light-gray);
+}
+
+/* =========================
+   BOTÕES LADO A LADO
+========================= */
+.pet-info .btn,
+.pet-info .fav-btn {
+  display: inline-block;
+  margin-top: 10px;
 }
 
 /* =========================
    RESPONSIVO
 ========================= */
 @media (max-width: 700px) {
-  .pet-imagens {
-    grid-template-columns: 1fr;
+  .pet-imagens img {
+    max-width: 300px;
   }
 }

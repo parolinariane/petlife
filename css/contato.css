@@ -1,10 +1,4 @@
 
-/* ================================================
-   contato.css — Página de Contato | PetLife
-   Complementa o style.css existente do projeto
-   Cores base: #364C59 (primária) | #74838C (secundária)
-   ================================================ */
-
 .container {
     max-width: 1200px;
     margin: 0 auto;
@@ -401,3 +395,352 @@
     }
 }
 
+
+
+/* ================================================
+   ADIÇÕES PARA O JAVASCRIPT — contato.css
+   ================================================ */
+
+/* ── Área animada que envolve form e sucesso ──── */
+.form-area {
+    overflow: hidden;
+}
+
+/* ── Erros de validação ─────────────────────────*/
+.form-grupo {
+    position: relative;
+}
+
+.form-erro {
+    font-size: 0.76rem;
+    color: #c0392b;
+    display: none;
+    margin-top: 2px;
+}
+
+.form-erro.visivel {
+    display: block;
+}
+
+.form-grupo input.invalido,
+.form-grupo select.invalido,
+.form-grupo textarea.invalido {
+    border-color: #c0392b;
+    box-shadow: 0 0 0 3px rgba(192, 57, 43, .1);
+}
+
+/* ── Mensagem de sucesso ────────────────────────*/
+.form-sucesso {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 50px 20px;
+    gap: 14px;
+}
+
+.form-sucesso__icone {
+    width: 70px;
+    height: 70px;
+    background: #eafaf1;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 4px;
+}
+
+.form-sucesso__icone svg {
+    width: 34px;
+    height: 34px;
+    color: #27ae60;
+}
+
+.form-sucesso h3 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #1a1a1a;
+}
+
+.form-sucesso p {
+    font-size: 0.95rem;
+    color: #666;
+    line-height: 1.7;
+}
+
+.btn-novo {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    margin-top: 8px;
+    padding: 11px 24px;
+    background: #eef3f6;
+    color: #364C59;
+    border: 1.5px solid #c0cdd3;
+    border-radius: 8px;
+    font-family: 'Poppins', sans-serif;
+    font-size: 0.88rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background .2s, transform .15s;
+}
+
+.btn-novo svg {
+    width: 16px;
+    height: 16px;
+}
+
+.btn-novo:hover {
+    background: #dce8ed;
+    transform: translateY(-2px);
+}
+
+/* ── Animações ──────────────────────────────────*/
+
+/* Form desce e some ao enviar */
+@keyframes descerSair {
+    from { opacity: 1; transform: translateY(0); }
+    to   { opacity: 0; transform: translateY(28px); }
+}
+
+/* Sucesso entra vindo de cima */
+@keyframes descerEntrar {
+    from { opacity: 0; transform: translateY(-28px); }
+    to   { opacity: 1; transform: translateY(0); }
+}
+
+/* Sucesso some subindo */
+@keyframes subirSair {
+    from { opacity: 1; transform: translateY(0); }
+    to   { opacity: 0; transform: translateY(-20px); }
+}
+
+/* Form volta subindo de baixo */
+@keyframes subirEntrar {
+    from { opacity: 0; transform: translateY(20px); }
+    to   { opacity: 1; transform: translateY(0); }
+}
+
+.saindo {
+    animation: descerSair 0.35s ease forwards;
+}
+
+.form-sucesso.saindo {
+    animation: subirSair 0.3s ease forwards;
+}
+
+.entrando {
+    animation: descerEntrar 0.45s ease forwards;
+}
+
+.entrando-baixo {
+    animation: subirEntrar 0.45s ease forwards;
+}
+
+/* ================================================
+   SEÇÃO FEIRAS DE ADOÇÃO + MAPA
+   ================================================ */
+
+.feiras-secao {
+    padding: 60px 0 70px;
+    background: #f7f5f2;
+}
+
+.feiras-header {
+    text-align: center;
+    margin-bottom: 36px;
+}
+
+.feiras-badge {
+    display: inline-block;
+    background: #eef3f6;
+    border: 1px solid #c0cdd3;
+    color: #364C59;
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    padding: 5px 16px;
+    border-radius: 30px;
+    margin-bottom: 12px;
+}
+
+.feiras-titulo {
+    font-size: 1.7rem;
+    font-weight: 700;
+    color: #1a1a1a;
+    margin-bottom: 8px;
+}
+
+.feiras-sub {
+    font-size: 0.92rem;
+    color: #777;
+    max-width: 480px;
+    margin: 0 auto;
+    line-height: 1.6;
+}
+
+/* Layout mapa + lista */
+.feiras-layout {
+    display: grid;
+    grid-template-columns: 1fr 340px;
+    gap: 24px;
+    align-items: stretch;
+}
+
+/* O mapa em si */
+#mapa-feiras {
+    height: 100%;
+    min-height: 430px;
+    border-radius: 16px;
+    overflow: hidden;
+    border: 1px solid #e0d8d0;
+    z-index: 0;
+}
+
+/* Marcador personalizado */
+.mapa-marker {
+    font-size: 1.5rem;
+    line-height: 1;
+    filter: drop-shadow(0 2px 4px rgba(0,0,0,.25));
+}
+
+/* Popup do marcador */
+.mapa-popup {
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+    min-width: 180px;
+}
+
+.mapa-popup strong {
+    font-size: 0.88rem;
+    font-weight: 700;
+    color: #1a1a1a;
+}
+
+.mapa-popup span {
+    font-size: 0.8rem;
+    color: #364C59;
+    font-weight: 500;
+}
+
+.mapa-popup small {
+    font-size: 0.75rem;
+    color: #888;
+    line-height: 1.4;
+}
+
+/* Lista lateral de feiras */
+.feiras-lista {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.feira-card {
+    background: #fff;
+    border: 1px solid #e0d8d0;
+    border-radius: 12px;
+    padding: 16px;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    transition: box-shadow .2s, border-color .2s;
+}
+
+.feira-card:hover {
+    border-color: #a8bcC6;
+    box-shadow: 0 4px 14px rgba(54, 76, 89, .08);
+}
+
+.feira-card__num {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: #d8d0c8;
+    min-width: 28px;
+    text-align: center;
+}
+
+.feira-card__info {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+.feira-card__info h4 {
+    font-size: 0.88rem;
+    font-weight: 700;
+    color: #1a1a1a;
+}
+
+.feira-card__info span {
+    font-size: 0.78rem;
+    color: #364C59;
+    font-weight: 500;
+}
+
+.feira-card__info small {
+    font-size: 0.74rem;
+    color: #999;
+    line-height: 1.4;
+}
+
+.feira-card__btn {
+    width: 34px;
+    height: 34px;
+    background: #eef3f6;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #364C59;
+    flex-shrink: 0;
+    transition: background .2s, transform .15s;
+    text-decoration: none;
+}
+
+.feira-card__btn:hover {
+    background: #364C59;
+    color: #fff;
+    transform: scale(1.08);
+}
+
+.feira-card__btn svg {
+    width: 16px;
+    height: 16px;
+}
+
+/* Card de aviso — ONG */
+.feira-card--aviso {
+    background: #fff8e6;
+    border-color: #f0d98a;
+    gap: 12px;
+}
+
+.feira-card--aviso h4 {
+    color: #7a5c00;
+}
+
+.feira-card--aviso small {
+    color: #8a6a10;
+    font-size: 0.76rem;
+    line-height: 1.5;
+}
+
+.feira-card__aviso-icone {
+    font-size: 1.3rem;
+    flex-shrink: 0;
+}
+
+/* Responsivo */
+@media (max-width: 900px) {
+    .feiras-layout {
+        grid-template-columns: 1fr;
+    }
+
+    #mapa-feiras {
+        height: 320px;
+    }
+}
