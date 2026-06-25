@@ -24,18 +24,7 @@ const cachorrosMacho = [
     "Max",
     "Rex",
     "Bob",
-    "Luke"
-];
-
-const cachorrosFemea = [
-    "Luna",
-    "Mel",
-    "Nina",
-    "Amora",
-    "Bella"
-];
-
-const gatosMacho = [
+    "Luke",
     "Simba",
     "Tom",
     "Mingau",
@@ -43,13 +32,19 @@ const gatosMacho = [
     "Fred"
 ];
 
-const gatosFemea = [
+const cachorrosFemea = [
+    "Luna",
+    "Mel",
+    "Nina",
+    "Amora",
+    "Bella",
     "Mia",
     "Lili",
     "Lola",
     "Kiara",
     "Jade"
 ];
+
 
 // ====================
 // OBTÉM LISTA DE NOMES
@@ -70,15 +65,6 @@ function obterListaNomes() {
     ) {
         return cachorrosFemea;
     }
-
-    if (
-        tipoPet.value === "gato" &&
-        sexoPet.value === "macho"
-    ) {
-        return gatosMacho;
-    }
-
-    return gatosFemea;
 }
 
 // ====================

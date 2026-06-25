@@ -242,6 +242,8 @@
     transition: .3s;
 
     z-index: 99999;
+
+    pointer-events: none;
 }
 
 #toast.show {
