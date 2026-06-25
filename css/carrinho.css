@@ -308,3 +308,45 @@
     justify-content: center;
     align-items: center;
 }
+
+#fecharSucesso {
+    margin-top: 25px;
+
+    padding: 14px 28px;
+
+    background: linear-gradient(
+        135deg,
+        #364C59,
+        #5C6A73
+    );
+
+    color: #F2F2F2;
+
+    border: none;
+    border-radius: 12px;
+
+    font-family: 'Poppins', sans-serif;
+    font-size: 1rem;
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition: all 0.3s ease;
+
+    box-shadow:
+        0 6px 18px rgba(54, 76, 89, 0.25);
+}
+
+#fecharSucesso:hover {
+    transform: translateY(-3px);
+
+    box-shadow:
+        0 10px 25px rgba(54, 76, 89, 0.35);
+}
+
+#fecharSucesso:active {
+    transform: translateY(0);
+
+    box-shadow:
+        0 4px 10px rgba(54, 76, 89, 0.25);
+}
