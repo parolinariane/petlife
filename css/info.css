@@ -59,12 +59,13 @@
     border-radius: 30px;
     font-size: 0.85rem;
     font-weight: 500;
-    transition: background .2s, border-color .2s;
+    transition: background .2s, border-color .2s, transform .2s;
 }
 
 .info-nav__link:hover {
     background: rgba(255,255,255,.28);
     border-color: rgba(255,255,255,.5);
+    transform: translateY(-4px);
 }
 
 /* ── AVISO / BANNER ────────────────────────────── */
@@ -149,6 +150,12 @@
     border: 1px solid #e0d8d0;
     border-radius: 16px;
     padding: 28px;
+    transition: transform .3s, box-shadow .3s;
+}
+
+.card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 28px rgba(0,0,0,0.10);
 }
 
 .card__icone {
@@ -213,6 +220,12 @@
     display: flex;
     align-items: flex-start;
     gap: 16px;
+    transition: transform .3s, box-shadow .3s;
+}
+
+.dica-destaque:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 24px rgba(0,0,0,0.08);
 }
 
 .dica-destaque__icone {
@@ -253,6 +266,13 @@
     gap: 24px;
     padding: 28px 32px;
     border-bottom: 1px solid #eee;
+    transition: background .2s, transform .3s;
+    cursor: default;
+}
+
+.higiene-item:hover {
+    background: #f7f5f2;
+    transform: translateX(6px);
 }
 
 .higiene-item:last-child {
@@ -295,6 +315,12 @@
     border: 1px solid #e0d8d0;
     border-radius: 14px;
     padding: 24px;
+    transition: transform .3s, box-shadow .3s;
+}
+
+.vet-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 28px rgba(0,0,0,0.10);
 }
 
 .vet-card h4 {

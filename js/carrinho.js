@@ -1,7 +1,4 @@
-// ========================================
-// ELEMENTOS DA PÁGINA
-// ========================================
-
+// Elementos da página
 const lista =
 document.getElementById("lista-carrinho");
 
@@ -11,11 +8,7 @@ document.getElementById("total");
 const carrinho =
 JSON.parse(localStorage.getItem("carrinho")) || [];
 
-
-// ========================================
-// RENDERIZAÇÃO DO CARRINHO
-// ========================================
-
+// Renderização do carrinho
 if(carrinho.length === 0) {
 
     lista.innerHTML = `
@@ -58,12 +51,7 @@ carrinho.forEach((produto, index) => {
 total.textContent =
 `Total: R$ ${soma.toFixed(2)}`;
 
-
-
-// ========================================
-// REMOÇÃO DE PRODUTOS
-// ========================================
-
+// Remoção de produtos
 document.addEventListener("click", (event) => {
 
     const botao =
@@ -86,11 +74,7 @@ document.addEventListener("click", (event) => {
 });
 
 
-
-// ========================================
-// MODAL DE PAGAMENTO
-// ========================================
-
+// card de pagamento
 const modal =
 document.getElementById("modalPagamento");
 
@@ -129,11 +113,7 @@ window.addEventListener("click", (event) => {
 
 });
 
-
-// ========================================
-// FINALIZAÇÃO DA COMPRA
-// ========================================
-
+// finalização da compra
 const formPagamento =
 document.getElementById("formPagamento");
 
@@ -161,11 +141,7 @@ document
 });
 
 
-
-// ========================================
-// CAMPOS DO FORMULÁRIO
-// ========================================
-
+// campos do formulário
 const nomeInput =
 document.getElementById("nome");
 
@@ -182,11 +158,7 @@ const cpfInput =
 document.getElementById("cpf");
 
 
-
-// ========================================
-// MÁSCARA DO CARTÃO
-// ========================================
-
+// máscara do cartão
 cartaoInput.addEventListener("input", () => {
 
     let valor = cartaoInput.value;
@@ -210,11 +182,7 @@ cartaoInput.addEventListener("input", () => {
 });
 
 
-
-// ========================================
-// MÁSCARA DA VALIDADE
-// ========================================
-
+// máscara da validade
 validadeInput.addEventListener("input", () => {
 
     let valor = validadeInput.value;
@@ -242,11 +210,7 @@ validadeInput.addEventListener("input", () => {
 });
 
 
-
-// ========================================
-// MÁSCARA DO CVV
-// ========================================
-
+// máscara do código de segurança
 cvvInput.addEventListener("input", () => {
 
     cvvInput.value =
@@ -257,11 +221,7 @@ cvvInput.addEventListener("input", () => {
 });
 
 
-
-// ========================================
-// MÁSCARA DO CPF
-// ========================================
-
+// máscara do cpf
 cpfInput.addEventListener("input", () => {
 
     let valor =
@@ -289,11 +249,7 @@ cpfInput.addEventListener("input", () => {
 });
 
 
-
-// ========================================
-// PREVIEW DO CARTÃO
-// ========================================
-
+// preview do cartão
 nomeInput.addEventListener("input", () => {
 
     document.getElementById(

@@ -1,7 +1,4 @@
-// ====================
-// ELEMENTOS DA PÁGINA
-// ====================
-
+// Elementos da página
 const tipoPet =
 document.getElementById("tipoPet");
 
@@ -14,11 +11,7 @@ document.getElementById("btnGerarNome");
 const nomeGerado =
 document.getElementById("nomeGerado");
 
-
-// ====================
-// LISTAS DE NOMES
-// ====================
-
+// Lista dos nomes
 const cachorrosMacho = [
     "Thor",
     "Max",
@@ -45,11 +38,7 @@ const cachorrosFemea = [
     "Jade"
 ];
 
-
-// ====================
-// OBTÉM LISTA DE NOMES
-// ====================
-
+// Pega a lista de nomes
 function obterListaNomes() {
 
     if (
@@ -67,10 +56,7 @@ function obterListaNomes() {
     }
 }
 
-// ====================
-// SORTEIO ANIMADO
-// ====================
-
+// Sorteio
 function gerarNome() {
 
     const lista = obterListaNomes();
@@ -105,10 +91,7 @@ function gerarNome() {
     }, 80);
 }
 
-// ====================
-// EVENTOS
-// ====================
-
+// Evento ao clicar no botão
 btnGerarNome.addEventListener(
     "click",
     gerarNome

@@ -1,3 +1,4 @@
+// atualiza contador do carrinho
 function atualizarContadorCarrinho() {
 
     const contador =
@@ -13,6 +14,7 @@ function atualizarContadorCarrinho() {
 
 atualizarContadorCarrinho();
 
+// mostra mensagem de produto adicionado no carrinho 
 function mostrarToast(mensagem) {
 
     const toast =

@@ -1,6 +1,3 @@
-// ================================================
-//  contato.js — Formulário de Contato | PetLife
-// ================================================
 
 const form        = document.getElementById('contatoForm');
 const formSucesso = document.getElementById('formSucesso');

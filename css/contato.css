@@ -58,6 +58,11 @@
     border: 1px solid #e0d8d0;
     border-radius: 18px;
     padding: 40px;
+    transition: box-shadow .3s;
+}
+
+.contato-form-wrap:hover {
+    box-shadow: 0 12px 32px rgba(0,0,0,0.08);
 }
 
 .contato-form-wrap h2 {
@@ -258,6 +263,12 @@
     border-radius: 14px;
     padding: 22px;
     margin-bottom: 18px;
+    transition: transform .3s, box-shadow .3s;
+}
+
+.aside-bloco:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 10px 24px rgba(0,0,0,0.09);
 }
 
 .aside-bloco h3 {
@@ -306,12 +317,13 @@
     text-decoration: none;
     padding: 8px 10px;
     border-radius: 8px;
-    transition: background .2s, color .2s;
+    transition: background .2s, color .2s, transform .2s;
 }
 
 .rede-link:hover {
     background: #eef3f6;
     color: #364C59;
+    transform: translateX(5px);
 }
 
 .rede-link svg {
@@ -646,12 +658,13 @@
     display: flex;
     align-items: center;
     gap: 14px;
-    transition: box-shadow .2s, border-color .2s;
+    transition: box-shadow .2s, border-color .2s, transform .3s;
 }
 
 .feira-card:hover {
     border-color: #a8bcC6;
-    box-shadow: 0 4px 14px rgba(54, 76, 89, .08);
+    box-shadow: 0 8px 20px rgba(54, 76, 89, .10);
+    transform: translateY(-5px);
 }
 
 .feira-card__num {
